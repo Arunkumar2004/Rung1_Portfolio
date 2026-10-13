@@ -1,5 +1,7 @@
 # rung1: governed AI changes to a business's live ERP
 
+**Arunkumar — Development Lead, rung1 (elan1)**
+
 **rung1 lets a business owner ask for a change to their accounting and operations system in plain language, and
 lets AI build it, while only deterministic code and a named human can let that change touch the company's books.**
 
@@ -15,7 +17,7 @@ catalogue and its generated inventory report; none is estimated.
 
 ## Built by one engineer, directing a team of AI agents
 
-I took rung1 end to end on my own: the product idea and positioning, the product and screen design, the 105-step
+**Arunkumar, Development Lead.** I took rung1 end to end on my own: the product idea and positioning, the product and screen design, the 105-step
 build plan, the architecture, all twelve architecture decision records, and every ruling and approval along the way.
 
 **I did not hand-write the code.** A team of AI agents (Claude Code) wrote it, under rules I wrote and machines
