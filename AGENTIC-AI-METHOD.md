@@ -51,11 +51,11 @@ merge.
 
 | Artefact | Count | Where |
 |---|---|---|
-| Unit specs | 118 on `main`; 159 across `main` and open stages | `specs/` |
-| Independent unit review cases | 107 on `main`; 147 across `main` and open stages | `docs/reviews/<unit>.md` |
+| Unit specs | 119 on `main`; 162 across `main` and open stages | `specs/` |
+| Independent unit review cases | 107 on `main`; 149 across `main` and open stages | `docs/reviews/<unit>.md` |
 | Stage close reports | 12 | `docs/reviews/stage-*.md` |
 | Stage path audits | 13 on `main` | `docs/reviews/stage-*-paths*.md` |
-| Other review records (decision record reviews, audit fixes, rulings) | 18 on `main` | `docs/reviews/` |
+| Other review records (decision record reviews, audit fixes, rulings) | 19 on `main` | `docs/reviews/` |
 | Architecture decision records | 12, all accepted by me | `docs/adr/` |
 | Frozen error and refusal codes | 142 | the code register |
 
@@ -83,7 +83,7 @@ merge.
   for `main`.
 - **Live tests, not only mocks**: stage closes ran live suites against a real ERPNext bench (922 live tests at the S6
   close), a live Temporal dev server (40 orchestrator tests at the S4 close) and the live model gateway (S7 close).
-- **Persistent memory**: the lead session keeps a set of memory files (17 indexed entries) recording rules learned
+- **Persistent memory**: the lead session keeps a set of memory files (19 indexed entries) recording rules learned
   from failures, my rulings and approvals, so a new session does not repeat an old mistake.
 - **Browser sweep**: wiring changes are checked in a real browser at 375, 768 and 1440 pixels.
 
@@ -100,8 +100,8 @@ After twelve stages had closed, I commissioned a full conformance audit rather t
 - **Most important finding:** every test on `main` passed, yet the governed pipeline was not joined end to end; some
   steps were still stubs or test fakes. Passing tests were not the same as a working whole.
 - **What happened next:** I gave rulings on the nine items only the owner could decide, and fix units were built,
-  reviewed and merged into `main` on 12 and 13 Oct 2026 (S0-F1, S2-F1, S4-F1, S7-F1, S9-F3, S12-F1, and the ruling
-  units RUL-G4, RUL-CODES and RUL-DEMO), plus two revised decision records. The remaining items are assigned to the
+  reviewed and merged into `main` on 12 and 13 Oct 2026 (S0-F1, S2-F1, S4-F1, S7-F1, S9-F3, S12-F1, S12-F2, and the
+  ruling units RUL-G4, RUL-CODES and RUL-DEMO), plus two revised decision records. The remaining items are assigned to the
   open stages, chiefly S10.
 
 ## 8. What is still owed by the method

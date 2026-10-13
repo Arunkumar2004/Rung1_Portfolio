@@ -19,7 +19,7 @@ the 7 Oct 2026 conformance audit. Dates are in India Standard Time.
 | 7 Oct | 9 | 13-auditor conformance audit of S0–S14: 142 units, 6 blockers, 49 majors, a 50-item fix list. The weekly usage limit was reached the same day. |
 | 8–11 Oct | 1 | Paused for the weekly limit. One commit by a teammate (a tracker sync), merged later without force. |
 | 12 Oct | 34 | Resumed. Audit fix units S2-F1, S4-F1, S7-F1 and S9-F3 merged into `main`. |
-| 13 Oct | 26 | Fix units S0-F1 and S12-F1 and ruling units RUL-G4, RUL-CODES and RUL-DEMO merged. Two decision record revisions accepted and merged. Open stages S10, S11, S13, S15, S16 and S17 continued on their branches. Inventory report generated. |
+| 13 Oct | 30 | Fix units S0-F1, S12-F1 and S12-F2 (the spend view reads the kernel meter) and ruling units RUL-G4, RUL-CODES and RUL-DEMO merged. Two decision record revisions accepted and merged. On the open stages, five more units were reviewed and merged into their stage branches (S11-U2 fast undo, S11-U4 not-reversible routing, S15-U6 WhatsApp adapter, S16-U8 release checklist, S17-U5 opening balances), taking the build to 148 of 202 units. Inventory report generated. |
 
 ## Closed stages
 
@@ -31,8 +31,8 @@ units that matched the plan out of units audited, then blockers and majors found
 |---|---|---|---|---|---|---|
 | S0 | Harness, rules, contracts | 27 Sep | 28 Sep | 9 of 9 | 285 tests; invariant check green | 7 of 9 match; 0 blockers, 3 majors |
 | S1 | Control plane: tenants, sign-in, audit | 28 Sep | 29 Sep | 8 of 8 | 204 tests with the database | 7 of 8; 0, 3 |
-| S2 | elan1 kernel | 29 Sep | 30 Sep | 13 of 15 | 719 tests with the database | 14 of 15; 0, 5 |
-| S5 | ERPNext foundation | 27 Sep | 30 Sep | 7 of 8 | 429 tests including live ERPNext | 7 of 8; 0, 1 |
+| S2 | elan1 kernel | 29 Sep | 30 Sep | 15 of 15 | 719 tests with the database | 14 of 15; 0, 5 |
+| S5 | ERPNext foundation | 27 Sep | 30 Sep | 8 of 8 | 429 tests including live ERPNext | 7 of 8; 0, 1 |
 | S3 | Write API and run lifecycle | 30 Sep | 1 Oct | 8 of 8 | 1,354 tests with the database | 6 of 8; 0, 3 |
 | S4 | Orchestrator (Temporal) | 1 Oct | 1 Oct | 7 of 7 | 1,433 tests; 40 on a live Temporal server | 6 of 7; 0, 3 |
 | S6 | ERP tool server | 30 Sep | 3 Oct | 8 of 8 | 1,783 tests; 922 live ERPNext tests | 7 of 8; 0, 1 |
@@ -47,27 +47,27 @@ Notes:
 - Every stage close also has a path audit by a read-only agent (13 path audit files on `main`). Every audit found no
   bypass except S5's, which found three bypasses in provisioner logic that no network path could reach; a follow-up
   unit (S5-U8) fixed them and was merged before the S5 close.
-- "Units done" follows the build checklist. S2-U8v, S2-U14 and S5-U8 (merged on 29-30 Sep 2026, before the S2 and S5
-  closes) were missing from it until 13 Oct 2026; they are now counted, giving 143 of 202.
+- "Units done" follows the build checklist. S2-U8v, S2-U14 and S5-U8 were merged on 29-30 Sep 2026, before the S2 and
+  S5 closes, but were missing from the checklist until 13 Oct 2026; they are now counted.
 - The audit counts some units differently from the checklist (for example S7 counts S7-U9b as its own unit and S9
   counts the F2 fix), so its denominators can differ by one.
 
 ## Open stages (in progress, not on `main`)
 
-Measured from each stage branch against `main` on 13 Oct 2026. None of these stages has a close report or a path audit
+Measured from each stage branch against `main` on 13 Oct 2026 (inventory report, 15:32 IST); "Units done" follows the build checklist, updated after the report. None of these stages has a close report or a path audit
 yet.
 
 | Stage | What | First unit commit | Last commit | Units done | Commits over `main` | Test functions added | Unit reviews added |
 |---|---|---|---|---|---:|---:|---:|
 | S10 | Approval, promoter, proof: the first real governed write | 1 Oct | 13 Oct | 10 of 11 | 121 | +197 | 10 |
-| S11 | Undo and Records | 5 Oct | 13 Oct | 4 of 9 | 130 | +250 | 11 |
+| S11 | Undo and Records | 5 Oct | 13 Oct | 6 of 9 | 139 | +279 | 12 |
 | S13 | Assurance | 30 Sep | 13 Oct | 4 of 7 | 140 | +227 | 13 |
-| S15 | CA console, WhatsApp, links | 6 Oct | 13 Oct | 5 of 8 | 171 | +317 | 15 |
-| S16 | Ops console, security | 1 Oct | 13 Oct | 8 of 10 | 199 | +344 | 18 |
-| S17 | Onboarding, data import | 6 Oct | 13 Oct | 6 of 8 | 170 | +316 | 17 |
+| S15 | CA console, WhatsApp, links | 6 Oct | 13 Oct | 6 of 8 | 171 | +317 | 15 |
+| S16 | Ops console, security | 1 Oct | 13 Oct | 9 of 10 | 199 | +344 | 18 |
+| S17 | Onboarding, data import | 6 Oct | 13 Oct | 7 of 8 | 292 | +518 | 27 |
 
 Stage branches share merged commits (S13, S15 and S17 contain S10 code), so the per-stage commit and test columns
-overlap and must not be added up. Counted once, the open stage branches hold 419 commits that are not on `main`.
+overlap and must not be added up. Counted once, the open stage branches hold 437 commits that are not on `main`, adding 42 unit review cases.
 
 ## Not started
 

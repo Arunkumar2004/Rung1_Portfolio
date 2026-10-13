@@ -1,26 +1,26 @@
 # Roadmap: what is not done yet
 
 **Everything on this page is NOT DONE YET.** As of 13 Oct 2026, rung1 is built from plan through 12 of 18 stages,
-with 143 of 202 units (71%) and 57 of 105 steps done. Nothing is deployed and nothing runs in production. Items are
+with 148 of 202 units (73%) and 60 of 105 steps done. Nothing is deployed and nothing runs in production. Items are
 listed in the order the plan runs them.
 
-## 1. Finish the open stages (16 units in progress)
+## 1. Finish the open stages (11 units in progress)
 
 | Stage | Done | Remaining units (all in progress, not yet merged) | Close at step |
 |---|---:|---|---:|
 | S10 Approval, promoter, proof | 10 of 11 | S10-U11 golden trace filled in | 52 |
-| S11 Undo and Records | 4 of 9 | S11-U2 fast undo (restore the pre-promotion snapshot); S11-U4 not-reversible changes routed to a person; S11-U5 undo endpoints; S11-U6 CSV exports; S11-U9 console wiring for Records | 59 |
+| S11 Undo and Records | 6 of 9 | S11-U5 undo endpoints; S11-U6 CSV exports; S11-U9 console wiring for Records | 59 |
 | S13 Assurance | 4 of 7 | S13-U5 erasure as an approved, logged job; S13-U6 audit, coverage, audit-pack and privacy endpoints; S13-U7 console wiring | 56 |
-| S15 CA console, WhatsApp, links | 5 of 8 | S15-U5 CA audit pack across clients; S15-U6 WhatsApp channel adapter; S15-U8 console wiring | 66 |
-| S16 Ops console, security | 8 of 10 | S16-U8 release checklist, protocol watch, design partners; S16-U10 ops console wiring | 72 |
-| S17 Onboarding, data import | 6 of 8 | S17-U5 opening balances; S17-U8 onboarding wiring | 75 |
+| S15 CA console, WhatsApp, links | 6 of 8 | S15-U5 CA audit pack across clients; S15-U8 console wiring | 66 |
+| S16 Ops console, security | 9 of 10 | S16-U10 ops console wiring | 72 |
+| S17 Onboarding, data import | 7 of 8 | S17-U8 onboarding wiring | 75 |
 
 
 ## 2. S10: the first real governed write (not done yet)
 
 S10 is the stage where the pieces built so far are joined into one real path: a request is planned, built in the
 sandbox, gated, decided by the kernel, approved by a named person, published by the promoter to a live development
-site, recorded and metered. Until S10 closes, rung1 has not made a real governed write end to end. Most of the 7 Oct
+site, recorded and metered. It also puts the credential broker in front of a real OpenBao secrets store. Until S10 closes, rung1 has not made a real governed write end to end. Most of the 7 Oct
 audit's remaining fix items land here (joining the kernel's decision and seal calls, removing test fakes from the
 workflow, routing every refusal through the kernel).
 
@@ -57,7 +57,7 @@ production.
 Step 79 closes deployment. Known prerequisites already recorded by the path audits include hardened access to Temporal
 (mutual TLS and a per-namespace authoriser) before any real promotion.
 
-Only when D12 is complete and the service is live will these pages say "in production".
+Only when D12 is done and the service is live will these pages say "in production".
 
 ## 6. Later phases (not started)
 
@@ -71,7 +71,7 @@ Only when D12 is complete and the service is live will these pages say "in produ
 
 | | Units |
 |---|---:|
-| In progress in open stages | 16 |
+| In progress in open stages | 11 |
 | Production deployment | 12 |
 | Later phases P2–P4 | 31 |
-| **Total not marked done** | **62** |
+| **Total not marked done** | **54** |

@@ -123,8 +123,8 @@ sentence in a document.
 
 | Layer | Technology | Status |
 |---|---|---|
-| Console | React 18, TypeScript, Vite; tenant, CA, ops, public and onboarding screens (127 routes) | Built; wired to the API stage by stage |
-| API | Python 3.12, FastAPI, Pydantic v2; JSON over `/v1` with bearer tokens | Built (86 routes on `main`) |
+| Console | React 18, TypeScript, Vite; tenant, CA, ops, public and onboarding screens (124 screens, 127 routes) | Built; wired to the API stage by stage |
+| API | Python 3.12, FastAPI, Pydantic v2; JSON over `/v1` with bearer tokens | Built (89 `/v1` routes on `main`; 157 with the open stages) |
 | Contracts | Pydantic models to JSON Schema 2020-12 to a generated TypeScript client | Built |
 | Database | PostgreSQL 16 with row-level security; Alembic migrations across three stores | Built |
 | Workflow | Temporal (one namespace per tenant) | Built (local dev server) |

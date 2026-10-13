@@ -113,6 +113,6 @@ are never trusted.
 steps of the governed pipeline were still stubs or test fakes, a default gate runner wrote fake passes, and one gate
 that must never be overridden could be.
 
-**What changed.** The audit became a ranked fix list; nine fix and ruling units were merged on 12 and 13 Oct 2026, and
+**What changed.** The audit became a ranked fix list; ten fix and ruling units were merged on 12 and 13 Oct 2026, and
 the rest are assigned to the open stages. The lesson for the method: stage-by-stage tests need a whole-path check
 alongside them, which is what the golden trace in S10 is for.
